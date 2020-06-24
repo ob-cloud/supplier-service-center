@@ -27,7 +27,7 @@ export default {
   production: process.env.NODE_ENV === 'production' && process.env.VUE_APP_PREVIEW !== 'true',
   // vue-ls options
   storageOptions: {
-    namespace: 'ssc__', // key prefix
+    namespace: 'ACCP__', // key prefix
     name: 'ls', // name variable Vue.[ls] or this.[$ls],
     storage: 'local' // storage name session, local, memory
   },
@@ -35,7 +35,7 @@ export default {
   // TODO Delete
   pageOptions: {
     logo: 'http://placehold.it/50x50/333/fff/?text=pro',
-    title: '供应商服务中心',
+    title: '运营商服务中心',
     // description: 'On-Bright Admin Pro',
     hasFooter: false, // hasFooter 为 true 时， 下面脚注配置生效
     copyright: 'OnBright.tld',
