@@ -1,50 +1,43 @@
 import { getAction, postAction, deleteAction } from '@/utils/ajax'
 
-const _PREFIX = '/accp'
+const _PREFIX = '/ssc'
 
-////// 客户模块
+////// 机构管理
 
-// 获取客户列表
-const getConsumerList = (params) => getAction('/mp/getConsumerList', params)
+// 获取机构部门列表
+const queryDepartTreeList = (params) => getAction(_PREFIX + '/depart/getDepartList', params)
 
-// 获取客户详情信息
-const getConsumerDetail = (id) => getAction(_PREFIX + '/mp/getConsumerDetail', {id})
+// 获取下拉树
+const queryIdTree = (params) => getAction(_PREFIX + '/depart/queryIdTree', params)
 
-// 编辑客户信息
-const editConsumer = (params) => postAction(_PREFIX + '/mp/editConsumerInfo', params)
+// 关键字查询部门
+const searchByKeywords = (id) => getAction(_PREFIX + '/mp/getConsumerDetail', {id})
 
-// 删除客户信息
-const delConsumerList = (params) => deleteAction(_PREFIX + '/mp/delConsumerDetail', params)
+// 添加
+const addDepart = (params) => postAction(_PREFIX + '', params)
 
-////// 套餐模块
+// 编辑
+const editDepart = (params) => postAction(_PREFIX + '', params)
 
-// 获取套餐列表
-const getPackageList = (params) => getAction(_PREFIX + '/mp/getPackageList', params)
+// 删除部门
+const deleteByDepartId = (params) => deleteAction(_PREFIX + '/mp/editConsumerInfo', params)
 
-// 获取套餐详情
-const getPackageDetail = (params) => getAction(_PREFIX + '/mp/getPackageDetail', params)
+// 权限树
+const queryTreeListForRole = (params) => getAction(_PREFIX + '/depart/role/queryTreeList', params)
 
-// 新增套餐
-const addPackage = (params) => postAction(_PREFIX + '/mp/addPackage', params)
+const queryDepartPermission = (params) => getAction(_PREFIX + '/depart/queryDepartPermission', params)
 
-// 编辑套餐
-const editPackage = (params) => postAction(_PREFIX + '/mp/editPackageDetail', params)
+const saveDepartPermission = (params) => getAction(_PREFIX + '', params)
 
-// 删除套餐
-const delPackage = (params) => deleteAction(_PREFIX + '/mp/delPackage', params)
-
-// 绑定套餐
-const bindPackage = (params) => postAction(_PREFIX + '/mp/bindPackage', params)
 
 export {
-  getConsumerList,
-  getConsumerDetail,
-  editConsumer,
-  delConsumerList,
-  getPackageList,
-  getPackageDetail,
-  addPackage,
-  editPackage,
-  delPackage,
-  bindPackage
+  queryDepartTreeList,
+  queryIdTree,
+  searchByKeywords,
+  addDepart,
+  editDepart,
+  deleteByDepartId,
+  queryTreeListForRole,
+  queryDepartPermission,
+  saveDepartPermission
 }
