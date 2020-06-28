@@ -157,7 +157,7 @@
             width: 150
           }],
         url: {
-          list: "/sys/user/departUserList",
+          list: "/ssc/depart/departUserList",
           edit: "/sys/user/editSysDepartWithUser",
           delete: "/sys/user/deleteUserInDepart",
           deleteBatch: "/sys/user/deleteUserInDepartBatch",

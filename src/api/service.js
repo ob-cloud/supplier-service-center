@@ -11,7 +11,7 @@ const queryDepartTreeList = (params) => getAction(_PREFIX + '/depart/getDepartLi
 const queryIdTree = (params) => getAction(_PREFIX + '/depart/queryIdTree', params)
 
 // 关键字查询部门
-const searchByKeywords = (id) => getAction(_PREFIX + '/mp/getConsumerDetail', {id})
+const searchByKeywords = (id) => getAction(_PREFIX + '/depart/searchBy', {id})
 
 // 添加
 const addDepart = (params) => postAction(_PREFIX + '', params)
@@ -32,7 +32,7 @@ const saveDepartPermission = (params) => postAction(_PREFIX + '', params)
 ////// 机构部门
 
 // 机构部门列表
-const queryMyDepartTreeList = (params) => getAction(_PREFIX + '/depart/role/queryTreeList', params)
+const queryMyDepartTreeList = (params) => getAction(_PREFIX + '/depart/queryMyDepartTreeList', params)
 
 // 添加部门用户
 const addDepartUser = (params) => postAction(_PREFIX + '/depart/role/queryTreeList', params)
