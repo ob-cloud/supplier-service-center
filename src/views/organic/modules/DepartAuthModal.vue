@@ -2,7 +2,7 @@
   <a-card :bordered="false">
     <template v-if="this.departId">
       <a-form>
-        <a-form-item label='所拥有的权限'>
+        <a-form-item label="所拥有的权限">
           <a-tree
             checkable
             @check="onCheck"
@@ -13,7 +13,8 @@
             :selectedKeys="selectedKeys"
             :expandedKeys="expandedKeysss"
             :checkStrictly="checkStrictly"
-            style="height:500px;overflow: auto;">
+            style="height:500px;overflow: auto;"
+          >
             <span slot="hasDatarule" slot-scope="{slotTitle,ruleFlag}">
               {{ slotTitle }}
               <a-icon v-if="ruleFlag" type="align-left" style="margin-left:5px;color: red;"></a-icon>
@@ -183,6 +184,6 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>

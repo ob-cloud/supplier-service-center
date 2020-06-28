@@ -27,8 +27,33 @@ const queryTreeListForRole = (params) => getAction(_PREFIX + '/depart/role/query
 
 const queryDepartPermission = (params) => getAction(_PREFIX + '/depart/queryDepartPermission', params)
 
-const saveDepartPermission = (params) => getAction(_PREFIX + '', params)
+const saveDepartPermission = (params) => postAction(_PREFIX + '', params)
 
+////// 机构部门
+
+// 机构部门列表
+const queryMyDepartTreeList = (params) => getAction(_PREFIX + '/depart/role/queryTreeList', params)
+
+// 添加部门用户
+const addDepartUser = (params) => postAction(_PREFIX + '/depart/role/queryTreeList', params)
+
+// 编辑部门用户
+const editDepartUser = (params) => postAction(_PREFIX + '/depart/role/queryTreeList', params)
+
+// 查询部门用户角色
+const queryDeptRolePermission = (params) => getAction(_PREFIX + '/depart/role/queryTreeList', params)
+
+// 查询部门角色权限
+const queryDepartUserRole = (params) => getAction(_PREFIX + '/depart/role/queryTreeList', params)
+
+// 查询部门角色树列表
+const queryTreeListForDeptRole = (params) => getAction(_PREFIX + '/depart/role/queryTreeList', params)
+
+// 保存部门角色权限
+const saveDeptRolePermission = (params) => postAction(_PREFIX + '/depart/role/queryTreeList', params)
+
+// 查询全部角色
+const queryall = (params) => postAction(_PREFIX + '/depart/role/queryTreeList', params)
 
 export {
   queryDepartTreeList,
@@ -39,5 +64,14 @@ export {
   deleteByDepartId,
   queryTreeListForRole,
   queryDepartPermission,
-  saveDepartPermission
+  saveDepartPermission,
+
+  queryMyDepartTreeList,
+  addDepartUser,
+  editDepartUser,
+  queryDeptRolePermission,
+  queryDepartUserRole,
+  queryTreeListForDeptRole,
+  saveDeptRolePermission,
+  queryall
 }
