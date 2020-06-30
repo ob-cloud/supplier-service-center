@@ -156,7 +156,7 @@
         selectedRowKeys: [],
         selectedRows: [],
         url: {
-          list: "/sys/user/list",
+          list: "/depart/user/list",
         }
       }
     },
@@ -190,7 +190,7 @@
         }
         var params = this.getQueryParams();//查询条件
         getAction(this.url.list, params).then((res) => {
-          if (res.success) {
+          if (this.$isAjaxSuccess(res.code)) {
             this.dataSource1 = res.result.records;
             this.ipagination.total = res.result.total;
           }

@@ -51,7 +51,7 @@
           <a-input placeholder="请输入地址" v-decorator="['address', {}]" />
         </a-form-item>
         <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="排序">
-          <a-input-number v-decorator="[ 'departOrder',{'initialValue':0}]" />
+          <a-input-number v-decorator="[ 'depart_order',{'initialValue':0}]" />
         </a-form-item>
         <a-form-item :labelCol="labelCol" :wrapperCol="wrapperCol" label="备注">
           <a-textarea placeholder="请输入备注" v-decorator="['memo', {}]" />
@@ -142,7 +142,7 @@
             this.model.orgCategory = '2';
           }
           this.$nextTick(() => {
-            this.form.setFieldsValue(pick(this.model,'orgCategory','departName','departNameEn','departNameAbbr','departOrder','description','orgType','orgCode','mobile','fax','address','memo','status','delFlag'))
+            this.form.setFieldsValue(pick(this.model,'orgCategory','departName','departNameEn','departNameAbbr','depart_order','description','orgType','orgCode','mobile','fax','address','memo','status','delFlag'))
           });
       },
       close () {

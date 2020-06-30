@@ -1,6 +1,6 @@
-import { getAction, postAction, deleteAction } from '@/utils/ajax'
+import { getAction, postAction, putAction, deleteAction } from '@/utils/ajax'
 
-const _PREFIX = '/ssc'
+const _PREFIX = ''
 
 ////// 机构管理
 
@@ -14,10 +14,10 @@ const queryIdTree = (params) => getAction(_PREFIX + '/depart/queryIdTree', param
 const searchByKeywords = (id) => getAction(_PREFIX + '/depart/searchBy', {id})
 
 // 添加
-const addDepart = (params) => postAction(_PREFIX + '', params)
+const addDepart = (params) => postAction(_PREFIX + '/depart/addDepart', params)
 
 // 编辑
-const editDepart = (params) => postAction(_PREFIX + '', params)
+const editDepart = (params) => putAction(_PREFIX + '', params)
 
 // 删除部门
 const deleteByDepartId = (params) => deleteAction(_PREFIX + '/mp/editConsumerInfo', params)
@@ -38,7 +38,7 @@ const queryMyDepartTreeList = (params) => getAction(_PREFIX + '/depart/queryMyDe
 const addDepartUser = (params) => postAction(_PREFIX + '/depart/role/queryTreeList', params)
 
 // 编辑部门用户
-const editDepartUser = (params) => postAction(_PREFIX + '/depart/role/queryTreeList', params)
+const editDepartUser = (params) => putAction(_PREFIX + '/depart/role/queryTreeList', params)
 
 // 查询部门用户角色
 const queryDeptRolePermission = (params) => getAction(_PREFIX + '/depart/role/queryTreeList', params)

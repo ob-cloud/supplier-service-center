@@ -257,6 +257,7 @@
         that.departTree = []
         queryDepartTreeList().then((res) => {
           if (this.$isAjaxSuccess(res.code)) {
+            if (!res.result) return
             //部门全选后，再添加部门，选中数量增多
             this.allTreeKeys = [];
             for (let i = 0; i < res.result.length; i++) {

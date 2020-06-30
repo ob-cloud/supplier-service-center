@@ -158,7 +158,7 @@
           }],
         url: {
           list: "/ssc/depart/departUserList",
-          edit: "/sys/user/editSysDepartWithUser",
+          edit: "/ssc/depart/editDepartWithUser",
           delete: "/sys/user/deleteUserInDepart",
           deleteBatch: "/sys/user/deleteUserInDepartBatch",
         }
@@ -185,7 +185,7 @@
         let params = this.getQueryParams();//查询条件
         params.depId = this.currentDeptId;
         getAction(this.url.list, params).then((res) => {
-          if (res.success && res.result) {
+          if (this.$isAjaxSuccess(res.code)) {
             this.dataSource = res.result.records;
             this.ipagination.total = res.result.total;
           }
@@ -217,7 +217,7 @@
             content: "是否取消用户与选中部门的关联?",
             onOk: function () {
               deleteAction(that.url.deleteBatch, {depId: that.currentDeptId, userIds: ids}).then((res) => {
-                if (res.success) {
+                if (this.$isAjaxSuccess(res.code)) {
                   that.$message.success("删除用户与选中部门关系成功！");
                   that.loadData();
                   that.onClearSelected();
@@ -241,7 +241,7 @@
 
         var that = this;
         deleteAction(that.url.delete, {depId: this.currentDeptId, userId: id}).then((res) => {
-          if (res.success) {
+          if (this.$isAjaxSuccess(res.code)) {
             that.$message.success("删除用户与选中部门关系成功！");
             if (this.selectedRowKeys.length>0){
                for(let i =0; i<this.selectedRowKeys.length;i++){
@@ -305,7 +305,7 @@
         }
         console.log(params);
         postAction(this.url.edit, params).then((res) => {
-          if (res.success) {
+          if (this.$isAjaxSuccess(res.code)) {
             this.$message.success(res.message);
             this.loadData();
           } else {
