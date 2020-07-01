@@ -125,6 +125,7 @@
     </div>
     <service-content-modal ref="modalForm"></service-content-modal>
     <service-order-arrange-modal ref="orderArrangeModal"></service-order-arrange-modal>
+    <service-order-visit-modal ref="orderVisitModal"></service-order-visit-modal>
   </a-card>
 </template>
 
@@ -132,13 +133,15 @@
   import { ProListMixin } from '@/utils/mixins/ProListMixin'
   import ServiceContentModal from './modules/ServiceContentModal'
   import ServiceOrderArrangeModal from './modules/ServiceOrderArrangeModal'
+  import ServiceOrderVisitModal from './modules/ServiceOrderVisitModal'
 
   export default {
     name: 'ServiceRecord',
     mixins: [ ProListMixin ],
     components: {
       ServiceContentModal,
-      ServiceOrderArrangeModal
+      ServiceOrderArrangeModal,
+      ServiceOrderVisitModal
     },
     data() {
       return {
@@ -295,7 +298,10 @@
       },
       handleOrderArrange (record) {
         this.$refs.orderArrangeModal.edit(record)
-      }
+      },
+      handleOrderVisit (record) {
+        this.$refs.orderVisitModal.edit(record)
+      },
     }
 
   }
