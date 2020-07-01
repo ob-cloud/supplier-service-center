@@ -27,10 +27,11 @@ export default {
   production: process.env.NODE_ENV === 'production' && process.env.VUE_APP_PREVIEW !== 'true',
   // vue-ls options
   storageOptions: {
-    namespace: 'ACCP__', // key prefix
+    namespace: 'SSC__', // key prefix
     name: 'ls', // name variable Vue.[ls] or this.[$ls],
     storage: 'local' // storage name session, local, memory
   },
+  mockPrefix: '/ssc',
   ///// 此下面配置忽略
   // TODO Delete
   pageOptions: {

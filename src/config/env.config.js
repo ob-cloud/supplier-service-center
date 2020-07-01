@@ -1,5 +1,5 @@
 const BASE_PREFIX = './nurse'
-const LOCAL_BASE_API = '/pro'
+const LOCAL_BASE_API = '/nurse'
 const DEV_BASE_API = BASE_PREFIX
 const TEST_BASE_API = BASE_PREFIX
 const PRO_BASE_API = BASE_PREFIX
@@ -13,7 +13,7 @@ const envConfig = {
 
 // export const WEBSOCKET_URL = 'https://aliiot.on-bright.com/mock/13/pro/websocket/{topic}'
 // export const WEBSOCKET_URL = 'https://aliiot.on-bright.com/pro/websocket/{topic}'
-export const WEBSOCKET_URL = 'http://192.168.200.125:8082/nurse/websocket/{topic}'
+export const WEBSOCKET_URL = 'http://192.168.200.115:8082/nurse/websocket/{topic}'
 
 export function isProEnv () {
   return process.env.NODE_ENV === 'production'
