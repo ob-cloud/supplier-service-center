@@ -14,7 +14,7 @@
           <a-input v-decorator="[ 'id', {}]" :readOnly="true" />
         </a-form-item>
         <a-form-item label="临时密码时效" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input-number v-decorator="[ 'hour', {}]" :min="1" :max="6" />
+          <a-input-number v-decorator="[ 'hour', {}]" :min="1" :max="6" /> 单位(h)
         </a-form-item>
         <a-form-item label="通知对象" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-select v-decorator="[ 'notify', {}]" placeholder="请选择提醒对象">

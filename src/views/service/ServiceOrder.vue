@@ -221,7 +221,7 @@
           list: '/Svc/getSvcOrderList',
         },
         path: {
-          detail: '/service/record/detail'
+          detail: '/service/order/detail'
         }
       }
     },

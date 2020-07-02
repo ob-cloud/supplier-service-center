@@ -63,6 +63,18 @@ export default [
         },
         "name": "service-order",
         "id": "4r915b2769fc80648e92d04e84ca059d"
+      },
+      {
+        "path": "/service/order/detail",
+        "component": "service/modules/ServiceOrderDetailModal",
+        "route": "1",
+        "meta": {
+          "keepAlive": false,
+          "title": "服务订单详情"
+        },
+        "hidden": true,
+        "name": "service-order-detail",
+        "id": "4r915b2769fc80648e92d04e84ca059d"
       }
     ],
     "meta": {
