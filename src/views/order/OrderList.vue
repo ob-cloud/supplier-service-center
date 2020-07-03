@@ -133,7 +133,6 @@
         </span>
       </a-table>
     </div>
-    <!-- <order-detail-modal ref="modalForm"></order-detail-modal> -->
     <order-arrange-modal ref="orderArrangeModal"></order-arrange-modal>
     <order-visit-modal ref="orderVisitModal"></order-visit-modal>
   </a-card>
@@ -141,7 +140,6 @@
 
 <script>
   import { ProListMixin } from '@/utils/mixins/ProListMixin'
-  // import OrderDetailModal from './modules/OrderDetailModal'
   import OrderArrangeModal from './modules/OrderArrangeModal'
   import OrderVisitModal from './modules/OrderVisitModal'
 
@@ -160,62 +158,72 @@
         },
         columns: [
           {
-            title: '订单号',
+            title: '工单号',
             align: 'center',
             dataIndex: 'id',
             width: 160
           },
           {
-            title: '服务标题',
+            title: '工单标题',
             align: 'center',
-            dataIndex: 'serviceName',
+            dataIndex: 'ordereName',
             width: 160
           },
           {
-            title: '护理对象',
+            title: '工单类型',
             align: 'center',
             width: 100,
-            dataIndex: 'wechatUserParentName'
+            dataIndex: 'orderType'
           },
           {
-            title: '申请时间',
+            title: '发起人',
             align: 'center',
             width: 100,
-            dataIndex: 'createTime'
+            dataIndex: 'promoter'
           },
           {
-            title: '费用',
+            title: '发起时间',
             align: 'center',
             width: 150,
-            dataIndex: 'servicePrice'
+            dataIndex: 'promotTime'
           },
           {
-            title: '护工',
+            title: '处理人员',
             align: 'center',
             width: 150,
-            dataIndex: 'nursingWorker'
+            dataIndex: 'handler'
           },
           {
-            title: '护理时间',
+            title: '处理时间',
             align: 'center',
             width: 150,
             sorter: true,
-            dataIndex: 'serviceBegainTime'
+            dataIndex: 'handleTime'
           },
           {
             title: '服务商',
             align: 'center',
             width: 150,
             sorter: true,
-            dataIndex: 'serviceOrgName'
+            dataIndex: 'supplier'
           },
           {
-            title: '订单状态',
+            title: '工单状态',
             align: 'center',
             width: 100,
             dataIndex: 'status',
             customRender (t) {
               const Map = {0: '待受理', 1: '已完成', 2: '进行中', 3: '已撤销'}
+              return Map[t] || ''
+            }
+          },
+          {
+            title: '紧急程度',
+            align: 'center',
+            width: 100,
+            dataIndex: 'urgent',
+            customRender (t) {
+              const Map = {0: '高', 1: '中', 2: '低'}
               return Map[t] || ''
             }
           },
@@ -231,7 +239,7 @@
           list: '/Svc/getSvcOrderList',
         },
         path: {
-          detail: '/service/order/detail'
+          detail: '/order/detail'
         }
       }
     },
@@ -299,12 +307,6 @@
       // },
       handleDevice () {
         // this.$refs.passwordmodal.show(username)
-      },
-      handleActionDetail (record) {
-        this.$router.push({path: '/service/record/detail', query: { id: record.id, disableSubmit: true, t: Date.now() }}, () => {
-          this.$store.dispatch('ToggleMultiTab', false)
-          this.$store.dispatch('ToggleIsActionBreadcrumb', false)
-        })
       },
       handleOrderArrange (record) {
         this.$refs.orderArrangeModal.edit(record)

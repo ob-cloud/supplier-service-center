@@ -226,6 +226,18 @@ export default [
         "name": "order-list",
         "id": "4r915b2769fc80648e92d04e84ca059d"
       },
+      {
+        "path": "/order/detail",
+        "component": "order/modules/OrderDetailModal",
+        "route": "1",
+        "meta": {
+          "keepAlive": false,
+          "title": "工单详情"
+        },
+        "hidden": true,
+        "name": "order-list-detail",
+        "id": "4r915b2769fc80648e92d04e84ca059d"
+      },
     ],
     "meta": {
       "keepAlive": false,
