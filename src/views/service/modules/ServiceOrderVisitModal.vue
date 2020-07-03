@@ -4,7 +4,6 @@
     :width="800"
     :visible="visible"
     :confirmLoading="confirmLoading"
-    @ok="handleSubmit"
     @cancel="handleCancel"
     cancelText="关闭"
   >
