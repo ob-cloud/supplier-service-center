@@ -93,7 +93,7 @@ export default [
     "children": [
       {
         "path": "/finace/revenue",
-        "component": "finace/FinanceRevenue",
+        "component": "finance/FinanceRevenue",
         "route": "1",
         "meta": {
           "keepAlive": false,
