@@ -136,7 +136,7 @@
 <script>
   import DepartModal from './modules/DepartModal'
   import pick from 'lodash.pick'
-  import {queryDepartTreeList, searchByKeywords, deleteByDepartId, editDepart} from '@/api/service'
+  import {queryDepartTreeList, searchByKeywords, delDepart, editDepart} from '@/api/service'
   import {deleteAction} from '@/utils/ajax'
   import {ProListMixin} from '@/utils/mixins/ProListMixin'
   import DepartAuthModal from './modules/DepartAuthModal'
@@ -483,7 +483,7 @@
           title: '确认删除',
           content: '确定要删除此部门以及子节点数据吗?',
           onOk: function () {
-            deleteByDepartId({id: that.rightClickSelectedKey}).then((resp) => {
+            delDepart({id: that.rightClickSelectedKey}).then((resp) => {
               if (resp.success) {
                 //删除成功后，去除已选中中的数据
                 that.checkedKeys.splice(that.checkedKeys.findIndex(key => key === that.rightClickSelectedKey), 1);

@@ -21,7 +21,10 @@ const addDepart = (params) => postAction(_PREFIX + '/depart/addDepart', params)
 const editDepart = (params) => putAction(_PREFIX + '', params)
 
 // 删除部门
-const deleteByDepartId = (params) => deleteAction(_PREFIX + '/mp/editConsumerInfo', params)
+const delDepart = (params) => deleteAction(_PREFIX + '/depart/delDepart', params)
+
+// 新增部门角色
+const addDepartRole = (params) => postAction(_PREFIX + '/depart/addDepartRole', params)
 
 // 权限树
 const queryTreeListForRole = (params) => getAction(_PREFIX + '/depart/role/queryTreeList', params)
@@ -62,7 +65,9 @@ export {
   searchByKeywords,
   addDepart,
   editDepart,
-  deleteByDepartId,
+  delDepart,
+  addDepartRole,
+
   queryTreeListForRole,
   queryDepartPermission,
   saveDepartPermission,
