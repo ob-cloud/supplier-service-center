@@ -64,7 +64,7 @@ module.exports = {
       },
      '/nurse': { // 系统基础接口
         // target: 'https://aliiot.on-bright.com/mock/13', //mock API接口系统
-        target: 'http://192.168.200.113:8082/nurse',
+        target: 'http://192.168.200.150:8082/nurse',
         ws: false,
         changeOrigin: true,
         pathRewrite: {
